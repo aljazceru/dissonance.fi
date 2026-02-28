@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dissonance.fi — Prediction Market Arbitrage</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Find arbitrage opportunities across prediction markets. Aggregate odds from Polymarket, Azuro, Metaculus and more.">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">dissonance.fi</a>
+            <div class="nav-links">
+                <a href="#markets">Markets</a>
+                <a href="#arbitrage">Arbitrage</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Find the Edge</h1>
+            <p class="tagline">Arbitrage opportunities across decentralized prediction markets</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-value" id="market-count">—</span>
+                    <span class="stat-label">Markets Tracked</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="arb-count">—</span>
+                    <span class="stat-label">Arb Opportunities</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="best-edge">—</span>
+                    <span class="stat-label">Best Edge</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="markets" class="section">
+            <h2>Cross-Market Odds</h2>
+            <div class="filters">
+                <input type="text" id="search" placeholder="Search markets..." class="search-input">
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="politics">Politics</option>
+                    <option value="crypto">Crypto</option>
+                    <option value="sports">Sports</option>
+                    <option value="tech">Tech</option>
+                </select>
+                <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+            </div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <span>Loading odds from multiple sources...</span>
+            </div>
+            <div id="markets-container" class="markets-grid"></div>
+        </section>
+
+        <section id="arbitrage" class="section">
+            <h2>🔴 Live Arbitrage Opportunities</h2>
+            <p class="section-desc">Markets where you can guarantee profit by betting both sides across different platforms.</p>
+            <div id="arbitrage-container" class="arbitrage-list"></div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>How It Works</h2>
+            <div class="how-it-works">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <h3>Aggregate</h3>
+                    <p>We pull odds from multiple prediction markets in real-time.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <h3>Normalize</h3>
+                    <p>All odds converted to probability format for easy comparison.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <h3>Detect</h3>
+                    <p>Algorithm finds pricing inefficiencies where sum of probabilities &lt; 100%.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <h3>Profit</h3>
+                    <p>Bet both sides across markets for guaranteed returns.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 dissonance.fi — Prediction Market Arbitrage</p>
+            <p class="footer-links">
+                <a href="https://github.com/aljazceru/dissonance.fi">GitHub</a>
+                <span>·</span>
+                <a href="https://nostr.net">Nostr</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>

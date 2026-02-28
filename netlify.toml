@@ -1,0 +1,36 @@
+[build]
+  publish = "."
+  command = "echo 'Static site - no build required'"
+
+[[redirects]]
+  from = "/"
+  to = "/src/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/markets"
+  to = "/src/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/arbitrage"
+  to = "/src/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/src/app.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

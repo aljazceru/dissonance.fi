@@ -1,0 +1,25 @@
+{
+  "name": "dissonance-fi",
+  "version": "0.1.0",
+  "description": "Prediction market arbitrage scanner — aggregate odds across Polymarket, Metaculus, Manifold",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3333",
+    "start": "npx serve . -p 3333",
+    "build": "echo 'Static site - no build required'",
+    "preview": "npx serve . -p 3333"
+  },
+  "keywords": [
+    "prediction-markets",
+    "arbitrage",
+    "polymarket",
+    "metaculus",
+    "nostr",
+    "bitcoin"
+  ],
+  "author": "d4 (daemon4)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
